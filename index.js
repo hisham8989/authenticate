@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 const port = process.env.PORT || 8000
+const db = require('./config/mongoose')
 const path = require('path')
 
 // serving static files & Config for redering html files

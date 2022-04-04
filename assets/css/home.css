@@ -1,11 +1,25 @@
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #d7f7f1;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
   }
+  .modal {
+    padding: 1em;
+    max-width: 150ch;
+    border: none;
+    box-shadow: 0 0 0.5rem 0 grey;
+  }
+  .modal > * {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .modal::backdrop {
+    background: linear-gradient(45deg, blue, white);
+    opacity: 0.2;
+  }
+  
   
   #sign-in-content,
   #sign-up-content {
@@ -58,6 +72,23 @@ body {
     padding: 12px;
     margin-top: 15px;
   }
+
+  .button{
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-size: 16px;
+  }
+
+  .close-button{
+    background-color:rgb(211, 58, 58);
+    color: white;
+    padding: 12px;
+  }
+
+  .button:active{
+    transform: scale(0.9);
+  }
   
   .form-container li {
     list-style: none;
@@ -85,7 +116,6 @@ body {
       border: 6px solid #8eada7;
       display: flex;
       flex-direction: column;
-      width: 70%;
       align-items: center;
       padding: 15px;
     }
@@ -95,7 +125,7 @@ body {
     }
   
     #form-container {
-      max-width: 250px;
+      max-width: 550px;
     }
   }
   

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <!-- <section id="sign-in-content">
+    <section id="sign-in-content">
 
         <div class="brand-container">
           <p>Welcome to new world !!! </p>
@@ -27,25 +27,33 @@
             <button type="submit">Login</button>
           </form>
           <ul>
-            <li><a href="">Sign Up?</a></li>
+            <li><button class="open-button button">Sign Up</button></li>
           </ul>
         </div>
-      </section> -->
-      
-      <section id="sign-up-content">
-        <div id="sign-up-form-container" class="form-container">
-          <form action="/users/create" class="form-group" method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Name...">
-            <label for="name">Email</label>
-            <input type="email" name="email" placeholder="Email...">
-            <label for="name">Password</label>
-            <input type="password" name="password" placeholder="Password...">
-            <label for="name">Confirm Password</label>
-            <input type="text" placeholder="Password...">
-            <button type="submit">Create</button>
-          </form>
-        </div>
       </section>
-</body>
+      
+      
+
+<dialog class="modal" id="modal">
+  <section id="sign-up-content">
+    <div id="sign-up-form-container" class="form-container">
+      <form action="/users/create" class="form-group" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Name...">
+        <label for="name">Email</label>
+        <input type="email" name="email" placeholder="Email...">
+        <label for="name">Password</label>
+        <input type="password" name="password" placeholder="Password...">
+        <label for="name">Confirm Password</label>
+        <input type="text" placeholder="Password...">
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </section>
+  <button class="close-button button">Cancel</button>
+</dialog>
+
+     
+      <script src="/js/home.js"></script>
+    </body>
 </html
