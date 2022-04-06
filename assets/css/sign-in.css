@@ -1,0 +1,51 @@
+
+  #sign-in-content {
+    max-height: 400px;
+    max-width: 600px;
+    border: 6px solid #8eada7;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #d7f7f1;
+  }
+
+  .brand-container {
+    width: 40%;
+    padding: 12px 9px;
+    display: flex;
+    align-items: center;
+    border: 20px solid #8eada7;
+  }
+
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    margin-left: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .form-group input {
+    padding: 6px 9px;
+    border: none;
+    outline-color: #b6d4ce;
+    font-size: 16px;
+  }
+  
+  .form-group button {
+    background-color: green;
+    color: white;
+    font-size: 17px;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+  }
+
+  .form-container li {
+    list-style: none;
+  }

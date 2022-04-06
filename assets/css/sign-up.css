@@ -1,0 +1,21 @@
+  #sign-up-content{
+    max-height: 400px;
+    min-width: 500px;
+    border: 6px solid #8eada7;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d7f7f1;
+  }
+  #sign-up-form-container {
+    width: 80%;
+  }
+
+.close-button{
+    background-color:rgb(211, 58, 58);
+    color: white;
+    padding: 12px;
+  }
+  .form-container li {
+    list-style: none;
+  }
