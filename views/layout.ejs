@@ -9,13 +9,72 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/layout.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="/css/layout.css" />
+
     <%- style %>
   </head>
-  <body>
+  <body style="font-family: Roboto">
     <%- include('./partials/_header') -%>
 
     <main id="layout-main"><%- body %></main>
     <%- include('./partials/_footer') -%> <%- script %>
+    <script>
+      <% if (flash.success &&
+      flash.success.length > 0) { %>
+        new Noty({
+          theme:'metroui',
+          text:"<%=flash.success%>",
+          type:'success',
+          layout:'topRight',
+          timeout:1500
+        }).show()
+      <% } %>
+      <% if (flash.error &&
+      flash.error.length > 0) { %>
+        new Noty({
+          theme:'metroui',
+          text:"<%=flash.error%>",
+          type:'error',
+          layout:'topRight',
+          timeout:1500
+        }).show()
+      <% } %>
+      <% if (flash.info &&
+      flash.info.length > 0) { %>
+        new Noty({
+          theme:'metroui',
+          text:"<%=flash.info%>",
+          type:'info',
+          layout:'topRight',
+          timeout:1500
+        }).show()
+      <% } %>
+      <% if (flash.warning &&
+      flash.warning.length > 0) { %>
+        new Noty({
+          theme:'metroui',
+          text:"<%=flash.warning%>",
+          type:'warning',
+          layout:'topRight',
+          timeout:1500
+        }).show()
+      <% } %>
+      <% if (flash.alert &&
+      flash.alert.length > 0) { %>
+        new Noty({
+          theme:'metroui',
+          text:"<%=flash.alert%>",
+          type:'alert',
+          layout:'topRight',
+          timeout:1500
+        }).show()
+      <% } %>
+    </script>
   </body>
 </html>
+

@@ -1,0 +1,35 @@
+header{
+    max-height: 15vh;
+    background: linear-gradient(60deg,orangered,yellow);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+#brand-name-container>a{
+cursor: pointer;
+text-decoration: none;
+color: white;
+}
+
+#header-links-list{
+    display: flex;
+}
+
+#header-links-list>li{
+    list-style: none;
+    margin-left: 10px;
+}
+
+#header-links-list>li>a{
+    text-decoration: none;
+    padding: 3px 6px;
+}
+
+#header-links-list>li>a:hover{
+    border-bottom: 2px solid orangered;
+    color: blue;
+}
+

@@ -1,0 +1,14 @@
+table{
+    margin: auto;
+    border-spacing: 50px;
+}
+
+.table-input{
+    border: none;
+    background-color: inherit;
+}
+
+.row-center{
+    text-align: center;
+    vertical-align: middle;
+}

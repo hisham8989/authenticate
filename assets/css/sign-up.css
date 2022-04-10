@@ -1,21 +1,38 @@
-  #sign-up-content{
-    max-height: 400px;
-    min-width: 500px;
-    border: 6px solid #8eada7;
+.form-container{
+    min-height: 400px;
+    max-width: 400px;
+    margin: auto;
     display: flex;
     justify-content: center;
-    padding: 15px;
-    background-color: #d7f7f1;
-  }
-  #sign-up-form-container {
-    width: 80%;
-  }
+    align-items: center;
+}
 
-.close-button{
-    background-color:rgb(211, 58, 58);
-    color: white;
-    padding: 12px;
-  }
-  .form-container li {
-    list-style: none;
-  }
+.form-container form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+}
+.form-container form input{
+    flex-basis: 40px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 6px 9px;
+    outline: none;
+}
+
+.form-container form input:last-of-type{
+    background:linear-gradient(45deg,#07dbdb,#06b206);
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+    transition: padding 0.3s ease-in-out;
+}
+
+.form-container form input:last-of-type:hover{
+    padding-top: 4px;
+}
+
+

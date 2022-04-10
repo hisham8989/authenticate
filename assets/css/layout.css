@@ -1,9 +1,4 @@
-body{
-    font-family: "Roboto", sans-serif;
-  }
-  body > main {
-      display: flex;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-    }
+#layout-main{
+    min-height: 100vh;
+    background-color: whitesmoke;
+}

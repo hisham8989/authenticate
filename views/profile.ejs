@@ -1,16 +1,55 @@
-<table style="border-spacing: 30px;">
-  <tr>
-    <th colspan="2">
-      Profile
-    </th>
-  <tr>
-    <td>Name</td>
-    <td><%= user.name %></td>
-  </tr>
-  <tr>
-    <td>Email</td>
-    <td><%= user.email %></td>
-  </tr>
-</table>
+<link rel="stylesheet" href="/css/profile.css" />
+<form action="/users/update/<%= user._id %>" method="post">
+  <table>
+    <tr>
+      <th colspan="2">PROFILE</th>
+    </tr>
 
-<a href="/users/destroy-session">Sign Out</a>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input
+          class="table-input"
+          type="text"
+          name="name"
+          value="<%= user.name %>"
+          readonly
+        />
+      </td>
+      <td><input onclick="editElement(this)" type="button" value="edit" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>
+        <input
+          class="table-input"
+          type="email"
+          name="email"
+          value="<%= user.email %>"
+          readonly
+        />
+      </td>
+      <td><input onclick="editElement(this)" type="button" value="edit" /></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input
+          class="table-input"
+          type="password"
+          name="password"
+          value=""
+          readonly
+          placeholder="Click Edit to update"
+        />
+      </td>
+      <td><input onclick="editElement(this)" type="button" value="edit" /></td>
+    </tr>
+    <tr>
+      <td class="row-center" colspan="3">
+        <button type="submit" id="update-btn" disabled>Update</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<script src="/js/profile.js"></script>

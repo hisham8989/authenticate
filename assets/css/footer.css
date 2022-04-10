@@ -1,0 +1,9 @@
+footer{
+    max-height: 15vh;
+    background: linear-gradient(60deg,yellow,orangered);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}

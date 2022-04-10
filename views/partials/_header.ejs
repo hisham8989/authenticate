@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/header.css" />
+<!-- Two Containers in header gonna be saparated appart -->
+<header>
+  <div id="brand-name-container">
+    <a href="/"><h2>Authentication</h2></a>
+  </div>
+
+  <div id="header-links-container">
+    <ul id="header-links-list">
+      <% if (locals.user) { %>
+      <li class="header-link">
+        <a href="/users/profile"><%= user.name %> </a>
+      </li>
+      <li class="header-link">
+        <a href="/users/sign-out">logout</a>
+      </li>
+      <% } else { %>
+
+      <li class="header-link">
+        <a href="/users/sign-in">Sign In</a>
+      </li>
+      <li class="header-link">
+        <a href="/users/sign-up">Sign Up</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</header>

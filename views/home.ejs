@@ -1,9 +1,7 @@
-<link rel="stylesheet" href="/css/home.css" />
-<div id="sign-in-content"><%- include('./partials/_sign-in') -%></div>
-
-<dialog class="modal" id="modal">
-  <div id="sign-up-content"><%- include('./partials/_sign-up') -%></div>
-  <button class="close-button button">Cancel</button>
-</dialog>
-
-<script src="/js/home.js"></script>
+<% if (locals.user) { %>
+<h1>
+  <a href="/users/profile"><%= user.name %></a>: logged In
+</h1>
+<% } else { %>
+<h1>Please sign in first</h1>
+<% } %>
