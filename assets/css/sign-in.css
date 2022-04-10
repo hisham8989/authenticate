@@ -35,4 +35,44 @@
     font-size: 1.35em;
 }
 
+.googleSignIn {
+    border: none;
+    border-radius: 2px;
+    background-color: #4285f4;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    display: flex;
+    padding: 1px 6px;
+    color: #FFF;
+    
+  }
 
+  .googleSignIn:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  }
+  .googleSignIn:active {
+    background: #3367D6;
+  }
+
+  
+.googleSignIn--white {
+    background: #FFF;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .googleSignIn--white:active {
+    background: #EEEEEE;
+  }
+
+  .googleSignIn__text {
+    padding: 11px;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .no-underline-link{
+      text-decoration: none;
+  }

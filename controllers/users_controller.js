@@ -31,8 +31,10 @@ module.exports.createUser = async function (req, res) {
   const user = await User.findOne({ email: req.body.email })
   if (!user) {
     await User.create(req.body)
+    req.flash('success','Account Created Successfully')
     return res.redirect('/users/sign-in')
   } else {
+    req.flash('warning','You are already registered')
     return res.redirect('back')
   }
 }
@@ -45,9 +47,8 @@ module.exports.update = async function (req, res, next) {
       } else {
         req.body.password = await bcrypt.hash(req.body.password, 10)
       }
-      console.log(req.body)
       User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
-        console.log(user)
+        req.flash('warning','Profile Updated')
         return res.redirect('back')
       })
     } catch (error) {
@@ -55,6 +56,7 @@ module.exports.update = async function (req, res, next) {
       return res.redirect('back')
     }
   } else {
+    req.flash('error','Unauthorized Request')
     return res.redirect('back')
   }
 }
@@ -74,6 +76,7 @@ module.exports.profile = async function (req, res) {
 }
 
 module.exports.createSession = function (req, res) {
+  req.flash('success','Logged in successfully')
   return res.redirect('/')
 }
 
@@ -128,8 +131,6 @@ module.exports.resetPassword = function (req, res) {
 module.exports.resetPasswordTokken = function (req, res) {
   // resetTokken.findOne({tokken:req.params.})
   //{ password: '123', confirm_password: '123' }
-  console.log(req.body)
-  console.log(req.params)
   if (req.body.password != req.body.confirm_password) {
     req.flash('error', "Confirm Password didn't match")
     return res.redirect('back')
@@ -141,6 +142,7 @@ module.exports.resetPasswordTokken = function (req, res) {
         tokken.save()
         req.body.password = await bcrypt.hash(req.body.password, 10)
         User.findByIdAndUpdate(tokken.user, req.body, function (err, user) {
+          req.flash('info','Password Reset Successfully')
           return res.redirect('/users/sign-in')
         })
       }

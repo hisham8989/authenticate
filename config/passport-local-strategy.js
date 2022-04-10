@@ -19,7 +19,10 @@ passport.use(
         }
         
           const isMatch = await bcrypt.compare(password, user.password)
-          if (!isMatch) return done(null, false)
+          if (!isMatch){
+            req.flash('error','Invalid Username/Password')
+            return done(null, false)
+          }
         
         return done(null, user)
       } catch (error) {
@@ -71,6 +74,7 @@ passport.setAuthenticatedUser = function (req, res, next) {
   if (req.isAuthenticated()) {
     // req . user contains the current signed in user details from the session cookie
     // just sending user to the views
+
     res.locals.user = req.user
   }
   next()

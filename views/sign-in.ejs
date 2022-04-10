@@ -1,9 +1,30 @@
-<link rel="stylesheet" href="/css/sign-In.css">
+<link rel="stylesheet" href="/css/sign-In.css" />
 <div class="form-container">
   <form action="/users/create-session" method="post">
-    <input type="email" name="email" id="email-input" required placeholder="Email..."/>
-    <input type="password" name="password" id="password-input" required placeholder="Password..." />
-    <input type="submit" value="Sign In">
+    <input
+      type="email"
+      name="email"
+      id="email-input"
+      required
+      placeholder="Email..."
+    />
+    <input
+      type="password"
+      name="password"
+      id="password-input"
+      required
+      placeholder="Password..."
+    />
+    <input type="submit" value="Sign In" />
+
+    <a
+      type="button"
+      href="/users/auth/google"
+      class="googleSignIn googleSignIn--white no-underline-link"
+    >
+      <img src="/images/google20.svg" alt="Google logo" />
+      <span class="googleSignIn__text">Sign In/Sign Up</span>
+    </a>
     <a href="/users/forgot-password">Forgot Password</a>
   </form>
 </div>
