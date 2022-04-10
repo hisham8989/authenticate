@@ -33,3 +33,28 @@ color: white;
     color: blue;
 }
 
+@media only screen and (max-width: 720px) {
+    header{
+        font-size: 1.1em;
+        padding: 0px 6px;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    header{
+        font-size: 0.9em;
+        padding: 0px 6px;
+    }
+  }
+
+
+  @media only screen and (max-width: 350px) {
+    header{
+        font-size: 0.65em;
+        padding: 0px 3px;
+    }
+    #header-links-list>li>a{
+        font-size: 0.9em;
+    }
+  }
+  
