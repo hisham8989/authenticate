@@ -3,6 +3,9 @@ const env = require('./environment')
 const ejs = require('ejs');
 const path = require('path');
 
+console.log(env.mail_user);
+console.log(env.mail_pass);
+
 let transporter = nodemailer.createTransport({
     service:'gmail',
     host:'smtp.gmail.com',

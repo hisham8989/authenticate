@@ -7,6 +7,8 @@ const expressLayouts = require('express-ejs-layouts')
 const db = require('./config/mongoose')
 const path = require('path')
 
+const env = require('./config/environment')
+
 // use for session cookie
 const session = require('express-session')
 const passport = require('passport')
@@ -69,6 +71,9 @@ app.use(customM.setFlash)
 
 app.use('/', require('./routes'))
 
+
+
 app.listen(port, () => {
+  console.log(`Environment : ${env.name}`);
   console.log(`app listening on http://localhost:${port}`)
 })
