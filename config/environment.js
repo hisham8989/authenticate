@@ -8,7 +8,7 @@ const development = {
     mail_pass:process.env.MAIL_PASS,
     strategyClientId:process.env.GOOLGLE_CLIENT_ID,
     strategyClientSecret:process.env.GOOLGLE_CLIENT_SECRET,
-    strategyCallbackUrl:"localhost:8000/users/auth/google/callback",
+    strategyCallbackUrl:"http://localhost:8000/users/auth/google/callback",
   }
 const production = {
     name: 'production',
