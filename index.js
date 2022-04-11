@@ -1,13 +1,13 @@
 const express = require('express')
+const env = require('./config/environment')
 const cookieParser = require('cookie-parser')
 const app = express()
-require('dotenv').config()
+require('./config/view-helpers')(app)
+
 const port = process.env.PORT || 8000
 const expressLayouts = require('express-ejs-layouts')
 const db = require('./config/mongoose')
 const path = require('path')
-
-const env = require('./config/environment')
 
 // use for session cookie
 const session = require('express-session')
@@ -51,12 +51,15 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 100,
     },
-    store: MongoStore.create({
-      mongoUrl: db._connectionString,
-      autoRemove: 'disabled',
-    },function (err) {
-      console.log.log(err || 'connect mongo setup ok')
-    }),
+    store: MongoStore.create(
+      {
+        mongoUrl: db._connectionString,
+        autoRemove: 'disabled',
+      },
+      function (err) {
+        console.log.log(err || 'connect mongo setup ok')
+      }
+    ),
   })
 )
 
@@ -71,9 +74,7 @@ app.use(customM.setFlash)
 
 app.use('/', require('./routes'))
 
-
-
 app.listen(port, () => {
-  console.log(`Environment : ${env.name}`);
+  console.log(`Environment : ${env.name}`)
   console.log(`app listening on http://localhost:${port}`)
 })

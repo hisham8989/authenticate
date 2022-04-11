@@ -1,16 +1,15 @@
-footer{
+footer {
     max-height: 15vh;
-    background: linear-gradient(60deg,yellow,orangered);
-    color: white;
+    background: linear-gradient(60deg, #ff0, #ff4500);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4em;
 }
-
 @media only screen and (max-width: 600px) {
-    footer{
+    footer {
         font-size: 0.9em;
-        padding: 0px 6px;
+        padding: 0 6px;
     }
-  }
+}

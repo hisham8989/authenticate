@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 const development = {
     name: 'development',
     db: 'ninja_users_development',
@@ -10,6 +10,7 @@ const development = {
     strategyClientSecret:process.env.GOOLGLE_CLIENT_SECRET,
     strategyCallbackUrl:"http://localhost:8000/users/auth/google/callback",
   }
+  
 const production = {
     name: 'production',
     db: 'ninja_users_production',
