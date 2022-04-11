@@ -1,6 +1,7 @@
 require('dotenv').config()
 const development = {
     name: 'development',
+    asset_path: 'assets',
     db: 'ninja_users_development',
     db_host:'hisham',
     db_pass:process.env.DB_PASSWORD,
@@ -13,6 +14,7 @@ const development = {
   
 const production = {
     name: 'production',
+    asset_path: process.env.ASSET_PATH,
     db: 'ninja_users_production',
     db_host:'hisham',
     db_pass:process.env.DB_PASSWORD,
