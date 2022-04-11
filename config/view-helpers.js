@@ -7,6 +7,7 @@ module.exports = (app) =>
     if (env.name == 'development') {
       return '/' + filePath
     }
+    console.log(filePath);
     return (
       '/' +
       JSON.parse(
