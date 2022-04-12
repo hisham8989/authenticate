@@ -25,6 +25,7 @@ module.exports.signUp = function (req, res) {
 
 module.exports.createUser = async function (req, res) {
   if (req.body.password != req.body.confirm_password) {
+    req.flash('warning','Confirm Password should be match')
     return res.redirect('back')
   }
 
@@ -63,6 +64,7 @@ module.exports.update = async function (req, res, next) {
 
 module.exports.destroySession = function (req, res) {
   req.logout()
+  req.flash('info','You have logged out successfuly')
   return res.redirect('/')
 }
 
@@ -100,8 +102,9 @@ module.exports.forgotPasswordEmail = function (req, res) {
         },
         function (err, tokken) {
           resetPassMailer.resetPassword(user, tokken)
+          
           return res.render('success-mail', {
-            title: 'Email Sent',
+            title: 'Email Sent'
           })
         }
       )
@@ -139,7 +142,7 @@ module.exports.resetPasswordTokken = function (req, res) {
       { tokken: req.params.access_tokken },
       async function (err, tokken) {
         tokken.isValid = false
-        tokken.save()
+        await tokken.save()
         req.body.password = await bcrypt.hash(req.body.password, 10)
         User.findByIdAndUpdate(tokken.user, req.body, function (err, user) {
           req.flash('info','Password Reset Successfully')
